@@ -23,8 +23,7 @@ public class EndDrawerToggle implements DrawerLayout.DrawerListener {
     private String openDrawerContentDesc;
     private String closeDrawerContentDesc;
 
-    public EndDrawerToggle(Activity activity, DrawerLayout drawerLayout, Toolbar toolbar,
-                           int openDrawerContentDescRes, int closeDrawerContentDescRes) {
+    public EndDrawerToggle(Activity activity, DrawerLayout drawerLayout, Toolbar toolbar, int openDrawerContentDescRes, int closeDrawerContentDescRes) {
 
         this.drawerLayout = drawerLayout;
         this.openDrawerContentDesc = activity.getString(openDrawerContentDescRes);
@@ -33,16 +32,15 @@ public class EndDrawerToggle implements DrawerLayout.DrawerListener {
         arrowDrawable = new DrawerArrowDrawable(toolbar.getContext());
         arrowDrawable.setDirection(DrawerArrowDrawable.ARROW_DIRECTION_END);
 
-        toggleButton = new AppCompatImageButton(toolbar.getContext(), null,
-                R.attr.toolbarNavigationButtonStyle);
+        toggleButton = new AppCompatImageButton(toolbar.getContext(), null, R.attr.toolbarNavigationButtonStyle);
         toolbar.addView(toggleButton, new LayoutParams(GravityCompat.END));
         toggleButton.setImageDrawable(arrowDrawable);
-        toggleButton.setOnClickListener(new OnClickListener() {
-                                            @Override
-                                            public void onClick(View v) {
-                                                toggle();
-                                            }
-                                        }
+        toggleButton.setOnClickListener(new OnClickListener(){
+            @Override
+            public void onClick(View v){
+                toggle();
+            }
+        }
         );
     }
 

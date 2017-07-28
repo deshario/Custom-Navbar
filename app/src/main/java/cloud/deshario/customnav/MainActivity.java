@@ -4,8 +4,6 @@ package cloud.deshario.customnav;
  * Created by Deshario on 7/28/2017.
  */
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -14,14 +12,10 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
-import android.view.Menu;
 import android.view.View;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -40,33 +34,6 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         initNavigationDrawer();
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        //getMenuInflater().inflate(R.menu.mainmenu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_menu){
-//            item.setChecked(!item.isChecked()); // check it if its'nt checked yet
-//                if(item.isChecked()){
-//                    item.setIcon(rotateDrawable(R.drawable.ic_arrow_back_white_24dp,180));
-//                }else{
-//                    item.setIcon(R.drawable.ic_menu_white_24dp);
-//                }
-            if(drawerLayout.isDrawerOpen(Gravity.RIGHT)){
-                drawerLayout.closeDrawer(Gravity.RIGHT);
-            }else{
-                drawerLayout.openDrawer(Gravity.RIGHT);
-            }
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     public void initNavigationDrawer() {
@@ -104,22 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 R.string.drawer_open,
                 R.string.drawer_close);
 
-//        final ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.drawer_open,R.string.drawer_close){
-//
-//            @Override
-//            public void onDrawerClosed(View v){
-//                super.onDrawerClosed(v);
-//            }
-//
-//            @Override
-//            public void onDrawerOpened(View v) {
-//                super.onDrawerOpened(v);
-//            }
-//        };
         drawerLayout.addDrawerListener(drawerToggle);
-        //drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        //actionBarDrawerToggle.syncState();
-        //actionBarDrawerToggle.setDrawerIndicatorEnabled(false);
     }
 
     @Override
