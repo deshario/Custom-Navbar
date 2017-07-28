@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item> <!-- This is the primary color of your app, it is used for the ActionBar/Toolbar for example. -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item> <!-- Color of Status bar on API 21+ -->
+        <item name="colorAccent">@color/colorAccent</item> <!--This is the accent color, used for FloatingActionBar and other things like the EditText divider -->
+        <item name="android:textColorPrimary">@color/default_bootstrap</item>
+        <item name="android:textColorSecondary">@color/success_bootstrap</item>
+    </style>
+
+</resources>
